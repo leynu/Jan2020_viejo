@@ -25,9 +25,6 @@ flags <- tibble(names = c("sweden","norway", "finland", "denmark","iceland"),
               UNICODE=c("U+1F1F8 U+1F1EA", "U+1F1F3 U+1F1F1", "U+1F1F8 U+1F1EA", "U+1F1F3 U+1F1F1",
                        "U+1F1F8 U+1F1EA")
               ) 
-flags
-
-
 
 
 excess_mortality <- read_csv("data/Excess_mortality_by_month", 
@@ -59,7 +56,6 @@ ggplot(data = excess_mortality,
   geom_line(size=1.1) +
   geom_point() +
   scale_color_manual(values=cbbPalette)  +
-  #ggtitle("Excess mortality in the Nordic Countries") +
   labs(title = "Excess mortality in the Nordic Countries",
        subtitle = "In Memory of Our Father, who lost his battle against \n Covid-19  on 11th January 2021",
        caption = "Deaths compared to average of previous five years \nSource data: Data are collected by Eurostat from the national statistical institutes. \n@leynu | Jan 2022"
@@ -87,9 +83,6 @@ ggplot(data = excess_mortality,
   transition_reveal(TIME_PERIOD) +
   shadow_wake(wake_length = 0.05) 
   
-
-
-
 # Save at gif:
 #
 anim_save("viejo.gif")
